@@ -23,3 +23,14 @@ describe("recipe images", () => {
     expect(screen.getByRole("img", { name: /final dish/i })).toBeInTheDocument();
   });
 });
+
+describe("nutrition and full plate on the recipe page", () => {
+  it("shows calories, fibre, glycemic index and the plate pairing", () => {
+    render(<RecipeDetail recipe={RECIPES[0]} />);
+    expect(screen.getByRole("heading", { name: /nutrition per serving/i })).toBeInTheDocument();
+    expect(screen.getByText("Calories")).toBeInTheDocument();
+    expect(screen.getByText("Fibre")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /build a full plate/i })).toBeInTheDocument();
+    expect(screen.getByText("Raw vegetable")).toBeInTheDocument();
+  });
+});

@@ -8,12 +8,15 @@ import { dishKind, ingredientCategory } from "@/lib/ingredients";
 import { useT } from "@/components/LanguageProvider";
 import { DishImage } from "@/components/DishImage";
 import { IngredientIcon } from "@/components/IngredientIcon";
+import { NutritionAndPlate } from "@/components/NutritionAndPlate";
+import { plateInfoFor } from "@/data/plate";
 
 export function RecipeDetail({ recipe }: { recipe: Recipe }) {
   const { t, lang } = useT();
   const text = localizeRecipe(recipe, lang);
   const millet = getMilletById(recipe.milletId);
   const milletName = millet ? t(`millet.name.${millet.id}`) : t("detail.millet");
+  const plate = plateInfoFor(recipe.id);
 
   return (
     <article className="recipe-detail">
@@ -70,6 +73,8 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
           ))}
         </ul>
       </section>
+
+      {plate && <NutritionAndPlate info={plate} />}
 
       <section className="detail-section" aria-labelledby="instructions-heading">
         <h2 id="instructions-heading">{t("detail.instructions")}</h2>

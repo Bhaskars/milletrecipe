@@ -843,3 +843,40 @@ button.button:disabled {
 .pending-actions .button + .button {
   margin-left: 8px;
 }
+
+/* Nutrition and full-plate section */
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 0.75rem 0;
+}
+
+.nutrition-grid .stat-label.gi-low {
+  color: var(--veg);
+  font-weight: 600;
+}
+
+.nutrition-grid .stat-label.gi-medium {
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.nutrition-grid .stat-label.gi-high {
+  color: var(--nonveg);
+  font-weight: 600;
+}
+
+.muted-note {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.plate-list {
+  padding-left: 1.2rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.plate-list li {
+  margin-bottom: 0.4rem;
+}

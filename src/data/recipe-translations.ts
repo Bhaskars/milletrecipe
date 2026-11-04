@@ -7,7 +7,7 @@ export interface RecipeText {
   description: string;
 }
 
-export const RECIPE_TRANSLATIONS: Record<string, { hi: RecipeText; ta: RecipeText }> = {
+const BASE_TRANSLATIONS: Record<string, { hi: RecipeText; ta: RecipeText }> = {
   "sorghum-01": {
     hi: { title: "जोलाडा रोटी के साथ एन्नेगायी", description: "ज्वार की हाथ से बनी रोटी, मूँगफली-तिल की ग्रेवी में भरवाँ छोटे बैंगन के साथ। उत्तर कर्नाटक का पारंपरिक भोजन।" },
     ta: { title: "ஜோலாடா ரொட்டியும் என்னெகாயியும்", description: "சோள மாவில் கையால் தட்டிய ரொட்டி, வேர்க்கடலை-எள் குழம்பில் அடைக்கப்பட்ட சிறிய கத்தரிக்காயுடன். வட கர்நாடக பாரம்பரிய உணவு." },
@@ -548,4 +548,12 @@ export const RECIPE_TRANSLATIONS: Record<string, { hi: RecipeText; ta: RecipeTex
     hi: { title: "कोर्ले पिठला के साथ भाकरी", description: "गाढ़े बेसन के पिठला के साथ मोटी ब्राउनटॉप मिलेट भाकरी और कच्चे प्याज़ का महाराष्ट्रीय भोजन।" },
     ta: { title: "கோர்லே பிட்லா மற்றும் பாக்ரி", description: "கடலை மாவு பிட்லாவுடன் தடித்த பிரவுன்டாப் சிறுதானிய பாக்ரி, பச்சை வெங்காயத்துடன் மகாராஷ்டிர உணவு." },
   },
+};
+
+import { EXTRA_TRANSLATIONS } from "@/data/extra";
+
+/** Hindi and Tamil titles and descriptions for every recipe. */
+export const RECIPE_TRANSLATIONS: Record<string, { hi: RecipeText; ta: RecipeText }> = {
+  ...BASE_TRANSLATIONS,
+  ...EXTRA_TRANSLATIONS,
 };

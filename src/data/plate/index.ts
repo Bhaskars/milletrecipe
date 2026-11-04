@@ -1,4 +1,5 @@
 import type { PlateInfo } from "@/types/plate";
+import { EXTRA_PLATE } from "@/data/extra";
 import { SORGHUM_PLATE } from "@/data/plate/sorghum";
 import { PEARL_MILLET_PLATE } from "@/data/plate/pearl-millet";
 import { FINGER_MILLET_PLATE } from "@/data/plate/finger-millet";
@@ -20,6 +21,7 @@ export const PLATE_INFO: Record<string, PlateInfo> = {
   ...BARNYARD_MILLET_PLATE,
   ...PROSO_MILLET_PLATE,
   ...BROWNTOP_MILLET_PLATE,
+  ...EXTRA_PLATE,
 };
 
 export function plateInfoFor(recipeId: string): PlateInfo | undefined {

@@ -1,5 +1,6 @@
 import type { LineContent } from "@/data/i18n-content/sorghum";
 import { RECIPE_TRANSLATIONS } from "@/data/recipe-translations";
+import { EXTRA_CONTENT } from "@/data/extra";
 import { SORGHUM_CONTENT } from "@/data/i18n-content/sorghum";
 import { PEARL_MILLET_CONTENT } from "@/data/i18n-content/pearl-millet";
 import { FINGER_MILLET_CONTENT } from "@/data/i18n-content/finger-millet";
@@ -23,6 +24,7 @@ export const RECIPE_CONTENT: Record<string, { hi: LineContent; ta: LineContent }
   ...BARNYARD_MILLET_CONTENT,
   ...PROSO_MILLET_CONTENT,
   ...BROWNTOP_MILLET_CONTENT,
+  ...EXTRA_CONTENT,
 };
 
 export { RECIPE_TRANSLATIONS };

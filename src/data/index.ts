@@ -1,4 +1,5 @@
 import type { Recipe } from "@/types/recipe";
+import { EXTRA_RECIPES } from "@/data/extra";
 import { sorghumRecipes } from "@/data/recipes/sorghum";
 import { pearlMilletRecipes } from "@/data/recipes/pearl-millet";
 import { fingerMilletRecipes } from "@/data/recipes/finger-millet";
@@ -19,4 +20,5 @@ export const RECIPES: Recipe[] = [
   ...barnyardMilletRecipes,
   ...prosoMilletRecipes,
   ...browntopMilletRecipes,
+  ...EXTRA_RECIPES,
 ];

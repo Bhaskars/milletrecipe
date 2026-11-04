@@ -35,15 +35,15 @@ describe("millet catalogue", () => {
 });
 
 describe("recipe coverage", () => {
-  it("has exactly 15 recipes for every millet", () => {
+  it("has at least 15 recipes for every millet", () => {
     for (const millet of MILLETS) {
       const count = getRecipesByMillet(millet.id, RECIPES).length;
-      expect(count, `recipes for ${millet.id}`).toBe(15);
+      expect(count, `recipes for ${millet.id}`).toBeGreaterThanOrEqual(15);
     }
   });
 
-  it("has 135 recipes in total (9 millets x 15)", () => {
-    expect(RECIPES).toHaveLength(MILLETS.length * 15);
+  it("has at least 135 recipes in total (9 millets x 15)", () => {
+    expect(RECIPES.length).toBeGreaterThanOrEqual(MILLETS.length * 15);
   });
 
   it("uses unique ids and unique slugs", () => {

@@ -72,10 +72,20 @@ export function PendingUsers() {
                 <th scope="row">{u.email}</th>
                 <td>{new Date(u.createdAt).toLocaleDateString(lang === "en" ? "en-GB" : lang)}</td>
                 <td className="pending-actions">
-                  <button type="button" className="button" disabled={busyEmail === u.email} onClick={() => decide(u.email, "approve")}>
+                  <button
+                    type="button"
+                    className="button button-small"
+                    disabled={busyEmail === u.email}
+                    onClick={() => decide(u.email, "approve")}
+                  >
                     {t("admin.approve")}
-                  </button>{" "}
-                  <button type="button" className="button" disabled={busyEmail === u.email} onClick={() => decide(u.email, "reject")}>
+                  </button>
+                  <button
+                    type="button"
+                    className="button button-small button-secondary"
+                    disabled={busyEmail === u.email}
+                    onClick={() => decide(u.email, "reject")}
+                  >
                     {t("admin.reject")}
                   </button>
                 </td>

@@ -31,7 +31,9 @@ export function LoginForm() {
         window.location.assign(next);
         return;
       }
-      setError(response.status === 401 ? t("login.error") : t("login.failed"));
+      if (response.status === 401) setError(t("login.error"));
+      else if (response.status === 500) setError(t("login.notConfigured"));
+      else setError(t("login.failed"));
     } catch {
       setError(t("login.failed"));
     } finally {

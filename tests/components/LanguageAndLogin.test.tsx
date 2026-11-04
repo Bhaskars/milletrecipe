@@ -70,3 +70,19 @@ describe("login form", () => {
     );
   });
 });
+
+describe("login form server errors", () => {
+  it("explains when the server is not configured", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify({ error: "x" }), { status: 500 })));
+    const user = userEvent.setup();
+    render(
+      <LanguageProvider>
+        <LoginForm />
+      </LanguageProvider>,
+    );
+    await user.type(screen.getByLabelText("Email"), "x@example.com");
+    await user.type(screen.getByLabelText("Password"), "pw");
+    await user.click(screen.getByRole("button", { name: "Log in" }));
+    expect(await screen.findByRole("alert")).toHaveTextContent("The login service is not configured on the server.");
+  });
+});

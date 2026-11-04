@@ -97,3 +97,19 @@ describe("session tokens", () => {
     expect(verifySessionToken(undefined, config.secret, now)).toBeNull();
   });
 });
+
+describe("configuration problems are reported clearly", () => {
+  it("trims stray whitespace and newlines pasted into environment values", () => {
+    const cfg = readAuthConfig({
+      AUTH_SECRET: "s".repeat(32) + "\n",
+      ADMIN_EMAIL: " bhaskar.sundarraj@gmail.com\n",
+      ADMIN_PASSWORD: "Denver@2027\n",
+    });
+    expect(cfg.secret).toBe("s".repeat(32));
+    expect(authenticate("bhaskar.sundarraj@gmail.com", "Denver@2027", cfg.accounts)?.role).toBe("admin");
+  });
+
+  it("names the missing variables when no account is configured", () => {
+    expect(() => readAuthConfig({ AUTH_SECRET: "s".repeat(32) })).toThrow(/ADMIN_EMAIL.*ADMIN_PASSWORD/);
+  });
+});

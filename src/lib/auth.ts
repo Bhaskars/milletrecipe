@@ -37,21 +37,36 @@ function safeEqual(a: string, b: string): boolean {
  * - USERS: optional JSON array of {"email","password"} regular user accounts
  */
 export function readAuthConfig(env: Record<string, string | undefined> = process.env): AuthConfig {
-  const secret = env.AUTH_SECRET;
+  // Values pasted into hosting dashboards often carry a trailing newline or space.
+  const clean = (value: string | undefined) => value?.trim() ?? "";
+
+  const secret = clean(env.AUTH_SECRET);
   if (!secret) {
     throw new Error("AUTH_SECRET is not set. Add it to the environment to enable login.");
   }
 
   const accounts: Account[] = [];
-  if (env.ADMIN_EMAIL && env.ADMIN_PASSWORD) {
-    accounts.push({ email: env.ADMIN_EMAIL, password: env.ADMIN_PASSWORD, role: "admin" });
+  const adminEmail = clean(env.ADMIN_EMAIL);
+  const adminPassword = clean(env.ADMIN_PASSWORD);
+  if (adminEmail && adminPassword) {
+    accounts.push({ email: adminEmail, password: adminPassword, role: "admin" });
   }
 
-  if (env.USERS) {
-    const list = JSON.parse(env.USERS) as { email: string; password: string }[];
-    for (const u of list) {
-      accounts.push({ email: u.email, password: u.password, role: "user" });
+  const users = clean(env.USERS);
+  if (users) {
+    let list: { email: string; password: string }[];
+    try {
+      list = JSON.parse(users);
+    } catch {
+      throw new Error("USERS must be a JSON array of {\"email\", \"password\"} objects.");
     }
+    for (const u of list) {
+      accounts.push({ email: String(u.email).trim(), password: String(u.password).trim(), role: "user" });
+    }
+  }
+
+  if (accounts.length === 0) {
+    throw new Error("No login accounts are configured. Set ADMIN_EMAIL and ADMIN_PASSWORD (and optionally USERS).");
   }
 
   return { secret, accounts };

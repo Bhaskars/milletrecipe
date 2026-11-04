@@ -16,7 +16,7 @@ export default async function AllRecipesPage({ searchParams }: { searchParams: S
   const { region, diet } = await searchParams;
 
   return (
-    <main className="container">
+    <main className="browse-content">
       <AllRecipesHeader count={RECIPES.length} />
       <RecipeBrowser
         recipes={RECIPES}

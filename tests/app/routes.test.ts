@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { generateStaticParams as milletParams } from "@/app/millets/[milletId]/page";
-import { generateStaticParams as recipeParams } from "@/app/recipes/[slug]/page";
+import { generateStaticParams as milletParams } from "@/app/(browse)/millets/[milletId]/page";
+import { generateStaticParams as recipeParams } from "@/app/(browse)/recipes/[slug]/page";
 import { MILLETS } from "@/data/millets";
 import { RECIPES } from "@/data";
 import { recipeSlug } from "@/lib/recipes";

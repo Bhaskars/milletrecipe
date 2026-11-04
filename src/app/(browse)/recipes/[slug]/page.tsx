@@ -22,7 +22,7 @@ export default async function RecipePage({ params }: { params: Promise<Params> }
   if (!recipe) notFound();
 
   return (
-    <main className="container narrow">
+    <main className="browse-content narrow">
       <RecipeDetail recipe={recipe} />
     </main>
   );

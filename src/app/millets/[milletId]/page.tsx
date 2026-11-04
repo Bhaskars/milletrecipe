@@ -26,7 +26,7 @@ export default async function MilletPage({ params }: { params: Promise<Params> }
 
   return (
     <main className="container">
-      <MilletHeader milletId={millet.id} scientificName={millet.scientificName} localNames={millet.localNames.join(" · ")} description={millet.description} />
+      <MilletHeader milletId={millet.id} scientificName={millet.scientificName} localNames={millet.localNames.join(" · ")} />
       <RecipeBrowser recipes={recipes} />
     </main>
   );

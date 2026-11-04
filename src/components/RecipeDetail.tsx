@@ -43,11 +43,11 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
         </div>
         <div>
           <dt>{t("detail.prep")}</dt>
-          <dd>{recipe.prepTimeMinutes} min</dd>
+          <dd>{t("unit.minutes", { n: recipe.prepTimeMinutes })}</dd>
         </div>
         <div>
           <dt>{t("detail.cook")}</dt>
-          <dd>{recipe.cookTimeMinutes} min</dd>
+          <dd>{t("unit.minutes", { n: recipe.cookTimeMinutes })}</dd>
         </div>
         <div>
           <dt>{t("detail.serves")}</dt>
@@ -62,10 +62,10 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
       <section className="detail-section" aria-labelledby="ingredients-heading">
         <h2 id="ingredients-heading">{t("detail.ingredients")}</h2>
         <ul className="ingredients" aria-label={t("detail.ingredients")}>
-          {recipe.ingredients.map((ingredient) => (
-            <li key={ingredient}>
-              <IngredientIcon category={ingredientCategory(ingredient)} />
-              <span>{ingredient}</span>
+          {recipe.ingredients.map((english, i) => (
+            <li key={english}>
+              <IngredientIcon category={ingredientCategory(english)} />
+              <span>{text.ingredients[i]}</span>
             </li>
           ))}
         </ul>
@@ -74,8 +74,8 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
       <section className="detail-section" aria-labelledby="instructions-heading">
         <h2 id="instructions-heading">{t("detail.instructions")}</h2>
         <ol className="steps" aria-label={t("detail.instructions")}>
-          {recipe.steps.map((step) => (
-            <li key={step}>{step}</li>
+          {text.steps.map((step, i) => (
+            <li key={recipe.steps[i]}>{step}</li>
           ))}
         </ol>
       </section>

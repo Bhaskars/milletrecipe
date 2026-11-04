@@ -27,7 +27,7 @@ export function HomeView() {
             <Link key={millet.id} href={`/millets/${millet.id}`} className="millet-card">
               <h3>{t(`millet.name.${millet.id}`)}</h3>
               <p className="local-names">{millet.localNames.join(" · ")}</p>
-              <p>{millet.description}</p>
+              <p>{t(`millet.desc.${millet.id}`)}</p>
               <span className="millet-count">{t("millet.count", { n: getRecipesByMillet(millet.id).length })}</span>
             </Link>
           ))}

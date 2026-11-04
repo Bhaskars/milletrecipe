@@ -12,7 +12,7 @@ const count = (recipes: typeof pearl, pred: (r: (typeof pearl)[number]) => boole
 describe("RecipeBrowser", () => {
   it("renders one card per recipe", () => {
     render(<RecipeBrowser recipes={pearl} />);
-    expect(screen.getAllByRole("article")).toHaveLength(15);
+    expect(screen.getAllByRole("article")).toHaveLength(pearl.length);
   });
 
   it("links each card to its recipe page", () => {
@@ -60,7 +60,7 @@ describe("RecipeBrowser", () => {
     await user.click(veg);
     expect(veg).toHaveAttribute("aria-pressed", "true");
     await user.click(screen.getByRole("button", { name: "All diets" }));
-    expect(screen.getAllByRole("article")).toHaveLength(15);
+    expect(screen.getAllByRole("article")).toHaveLength(pearl.length);
   });
 
   it("shows an empty state when nothing matches", () => {

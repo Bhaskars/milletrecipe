@@ -10,6 +10,7 @@ import { DishImage } from "@/components/DishImage";
 import { IngredientIcon } from "@/components/IngredientIcon";
 import { NutritionAndPlate } from "@/components/NutritionAndPlate";
 import { plateInfoFor } from "@/data/plate";
+import { fatPerServing } from "@/lib/fat";
 
 export function RecipeDetail({ recipe }: { recipe: Recipe }) {
   const { t, lang } = useT();
@@ -17,6 +18,7 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
   const millet = getMilletById(recipe.milletId);
   const milletName = millet ? t(`millet.name.${millet.id}`) : t("detail.millet");
   const plate = plateInfoFor(recipe.id);
+  const fat = fatPerServing(recipe);
 
   return (
     <article className="recipe-detail">
@@ -74,7 +76,7 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
         </ul>
       </section>
 
-      {plate && <NutritionAndPlate info={plate} title={text.title} />}
+      {plate && <NutritionAndPlate info={plate} title={text.title} fat={fat} />}
 
       <section className="detail-section" aria-labelledby="instructions-heading">
         <h2 id="instructions-heading">{t("detail.instructions")}</h2>

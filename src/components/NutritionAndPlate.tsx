@@ -4,9 +4,10 @@ import type { PlateInfo, VegetableDish } from "@/types/plate";
 import { giBand } from "@/types/plate";
 import { plateTotals, recipeRow, vegetableRow, type PlateRow } from "@/lib/nutrition";
 import { useT } from "@/components/LanguageProvider";
+import type { FatEstimate } from "@/lib/fat";
 
 /** Nutrition per serving for the recipe, and the full plate built around it. */
-export function NutritionAndPlate({ info, title }: { info: PlateInfo; title: string }) {
+export function NutritionAndPlate({ info, title, fat }: { info: PlateInfo; title: string; fat?: FatEstimate }) {
   const { t } = useT();
   const band = giBand(info.gi);
   const bandLabel = t(band === "low" ? "nutrition.giLow" : band === "medium" ? "nutrition.giMedium" : "nutrition.giHigh");
@@ -26,6 +27,22 @@ export function NutritionAndPlate({ info, title }: { info: PlateInfo; title: str
             <span className="stat-value">{info.kcal}</span>
             <span className="stat-label">{t("nutrition.kcal")}</span>
           </div>
+          {fat && (
+            <>
+              <div className="stat">
+                <span className="stat-value">{fat.totalG} g</span>
+                <span className="stat-label">{t("nutrition.fat")}</span>
+              </div>
+              <div className="stat">
+                <span className="stat-value">{fat.saturatedG} g</span>
+                <span className="stat-label">{t("nutrition.satFat")}</span>
+              </div>
+              <div className="stat">
+                <span className="stat-value">{fat.unsaturatedG} g</span>
+                <span className="stat-label">{t("nutrition.unsatFat")}</span>
+              </div>
+            </>
+          )}
           <div className="stat">
             <span className="stat-value">{info.fibreG} g</span>
             <span className="stat-label">{t("nutrition.fibre")}</span>
@@ -51,6 +68,7 @@ export function NutritionAndPlate({ info, title }: { info: PlateInfo; title: str
           <strong>{t("nutrition.minerals")}:</strong> {info.minerals.join(", ")}
         </p>
         <p className="muted-note">{t("nutrition.note")}</p>
+        {fat && <p className="muted-note">{t("nutrition.fatNote")}</p>}
       </section>
 
       <section className="detail-section" aria-labelledby="plate-heading">

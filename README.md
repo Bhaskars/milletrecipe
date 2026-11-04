@@ -29,6 +29,10 @@ Self-registration needs a Postgres database:
 
 With it set, visitors can request an account at `/register`. A request stays **pending** and the user cannot sign in or see recipes until an admin approves it on the `/admin` dashboard (Approve / Reject). Passwords are stored only as scrypt hashes. Without `DATABASE_URL`, sign-up is switched off and accounts come only from the environment variables above.
 
+## Fat content
+
+Each recipe page shows total, saturated and unsaturated fat per serving. `src/lib/fat.ts` estimates these from the ingredient list: it matches each ingredient to a fat source (ghee, oils, coconut, nuts, dairy, eggs, meat, fish, pulses, grains), converts the quantity to grams, and divides by servings. Ingredients with no fat, and oil for frying that isn't listed, aren't counted. Figures are estimates, not lab results. Tests are in `tests/lib/fat.test.ts`.
+
 ## Rice menu
 
 `/rice` lists 19 rice varieties in four groups: Everyday, Aromatic, Heritage and Whole grain. Each variety has its own page at `/rice/[id]` with the region, appearance, traditional uses, traditional and commonly claimed benefits, nutrition notes and cooking method. Heritage varieties include Mappillai Samba, Karuppu Kavuni, Navara, Kerala Matta, Pokkali and Chak-hao.

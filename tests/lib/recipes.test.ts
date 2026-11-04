@@ -33,7 +33,7 @@ describe("getMilletById", () => {
 describe("getRecipesByMillet", () => {
   it("returns only recipes that belong to the requested millet", () => {
     const recipes = getRecipesByMillet("pearl-millet", RECIPES);
-    expect(recipes.length).toBe(15);
+    expect(recipes.length).toBe(RECIPES.filter((r) => r.milletId === "pearl-millet").length);
     expect(recipes.every((r) => r.milletId === "pearl-millet")).toBe(true);
   });
 

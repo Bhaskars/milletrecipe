@@ -2,12 +2,20 @@
 
 import type { IngredientCategory } from "@/lib/ingredients";
 import { useT } from "@/components/LanguageProvider";
+import { ingredientPhoto } from "@/lib/photos";
 
 /** A small illustrative icon for each ingredient family. */
 export function IngredientIcon({ category }: { category: IngredientCategory }) {
   const { t } = useT();
   const label = t(`category.${category}`);
   const common = { width: 40, height: 40, viewBox: "0 0 48 48", role: "img" as const, "aria-label": label, className: "ingredient-icon" };
+
+  const photo = ingredientPhoto(category);
+  if (photo) {
+    return (
+      <img src={photo.src} alt={label} width={40} height={40} loading="lazy" className="ingredient-icon" />
+    );
+  }
 
   switch (category) {
     case "grain":

@@ -33,7 +33,7 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
       <p className="lead">{text.description}</p>
 
       <section className="final-dish" aria-label={t("detail.finalDish")}>
-        <DishImage kind={dishKind(recipe)} title={text.title} milletId={recipe.milletId} />
+        <DishImage kind={dishKind(recipe)} title={text.title} milletId={recipe.milletId} recipeId={recipe.id} />
       </section>
 
       <dl className="facts">

@@ -15,7 +15,7 @@ export function RecipeCard({ recipe }: { recipe: Recipe }) {
 
   return (
     <article className="recipe-card" data-diet={recipe.diet === "Vegetarian" ? "veg" : "non-veg"}>
-      <DishImage kind={dishKind(recipe)} title={text.title} milletId={recipe.milletId} />
+      <DishImage kind={dishKind(recipe)} title={text.title} milletId={recipe.milletId} recipeId={recipe.id} />
       <p className="tags">
         <span className="tag tag-region">{t(`region.${recipe.region}`)}</span>
         <span className="tag tag-diet">{t(`diet.${recipe.diet}`)}</span>

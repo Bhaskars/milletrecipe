@@ -2,6 +2,7 @@
 
 import type { DishKind } from "@/lib/ingredients";
 import { useT } from "@/components/LanguageProvider";
+import { dishPhoto } from "@/lib/photos";
 
 const MILLET_TINT: Record<string, string> = {
   sorghum: "#c98b3a",
@@ -81,9 +82,22 @@ function Shape({ kind, tint }: { kind: DishKind; tint: string }) {
   }
 }
 
-export function DishImage({ kind, title, milletId }: { kind: DishKind; title: string; milletId: string }) {
+export function DishImage({ kind, title, milletId, recipeId }: { kind: DishKind; title: string; milletId: string; recipeId?: string }) {
   const { t } = useT();
   const tint = MILLET_TINT[milletId] ?? "#c98b3a";
+  const photo = recipeId ? dishPhoto(recipeId) : undefined;
+  if (photo) {
+    return (
+      <img
+        src={photo.src}
+        alt={t("image.finalDish", { title })}
+        width={800}
+        height={600}
+        loading="lazy"
+        className="dish-image"
+      />
+    );
+  }
   return (
     <svg
       role="img"

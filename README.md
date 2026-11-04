@@ -6,6 +6,33 @@ A Next.js (App Router) + TypeScript website of traditional Indian millet recipes
 - Every recipe is classified by **region** (South Indian, North Indian, West Indian, East Indian), **diet** (Vegetarian, Non-Vegetarian) and **course** (Breakfast, Main Course, Snack, Accompaniment, Dessert, Drink).
 - Each recipe has an ingredient list with quantities and numbered, step-by-step instructions written for a standard home kitchen (stovetop, tawa, kadhai, pressure cooker or steamer).
 
+## Login and roles
+
+Every page requires sign-in. `src/proxy.ts` redirects anonymous visitors to `/login`.
+
+| Role | Can do |
+| --- | --- |
+| Admin | Browse everything, and open the `/admin` dashboard |
+| User | Browse all recipes. Cannot open `/admin` |
+
+Accounts come from environment variables, so no passwords are stored in the repository:
+
+- `AUTH_SECRET`: signs the session cookie (required)
+- `ADMIN_EMAIL` / `ADMIN_PASSWORD`: the admin account
+- `USERS`: optional JSON array of regular user accounts, e.g. `[{"email":"a@b.c","password":"..."}]`
+
+Copy `.env.example` to `.env.local` for local development. On Vercel, add the same variables under Project Settings → Environment Variables, then redeploy.
+
+There is no self-service sign-up. Accounts are managed through these variables. Adding a database is the next step if you need users to register.
+
+## Languages
+
+English is the default. Hindi and Tamil are also available from the language selector in the header, and the choice is remembered in the browser. The interface and recipe titles and descriptions are translated. Ingredient names and cooking steps stay in English.
+
+## Images
+
+Each ingredient has a small icon, chosen from its ingredient family (grain, lentil, vegetable, spice, dairy and so on). Each recipe has a drawing of its final dish. These are illustrations, not photographs. Real photos can replace them by editing `src/components/IngredientIcon.tsx` and `src/components/DishImage.tsx`.
+
 ## Getting started
 
 ```bash
@@ -31,12 +58,18 @@ npm start
 ```
 src/
   app/                  App Router pages and global styles
-  components/           RecipeBrowser (filters), RecipeCard, RecipeDetail, SiteHeader
+  components/           RecipeBrowser, RecipeCard, RecipeDetail, LoginForm, AdminDashboard, LanguageProvider, images
   data/
+    recipe-translations.ts  Hindi and Tamil titles and descriptions
     millets.ts          The nine millets: names, regional names, descriptions
     recipes/*.ts        One file per millet, 15 recipes each
     index.ts            Combines every recipe into RECIPES
   lib/recipes.ts        Slugs, lookups and filtering (pure functions)
+  lib/auth.ts           Account lookup, signed session tokens
+  lib/access.ts         Who may open which path
+  lib/i18n.ts           Interface translations (English, Hindi, Tamil)
+  lib/ingredients.ts    Ingredient families and dish drawings
+  proxy.ts              Login gate for every page
   types/recipe.ts       Domain types and the allowed region, diet, course and difficulty values
 tests/
   data/                 Catalogue rules: 15 per millet, classification, detailed steps, veg/non-veg consistency
@@ -64,3 +97,4 @@ The tests were written before the code they cover. The data tests enforce the co
 
 - Recipes are for a standard kitchen. Quantities are for 3-6 servings unless the recipe says otherwise. Adjust salt and spice to taste.
 - Regional names for millets are common usage and vary between communities. The catalogue lists the most widely used names.
+- Hindi and Tamil translations were written without review by a native speaker. A reviewer should check them before publishing.

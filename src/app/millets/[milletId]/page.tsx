@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { MILLETS } from "@/data/millets";
 import { getMilletById, getRecipesByMillet } from "@/lib/recipes";
 import { RecipeBrowser } from "@/components/RecipeBrowser";
+import { MilletHeader } from "@/components/MilletHeader";
 
 type Params = { milletId: string };
 
@@ -25,12 +26,7 @@ export default async function MilletPage({ params }: { params: Promise<Params> }
 
   return (
     <main className="container">
-      <header className="page-header">
-        <p className="eyebrow">{millet.scientificName}</p>
-        <h1>{millet.name} Recipes</h1>
-        <p className="local-names">{millet.localNames.join(" · ")}</p>
-        <p className="hero-text">{millet.description}</p>
-      </header>
+      <MilletHeader milletId={millet.id} scientificName={millet.scientificName} localNames={millet.localNames.join(" · ")} description={millet.description} />
       <RecipeBrowser recipes={recipes} />
     </main>
   );

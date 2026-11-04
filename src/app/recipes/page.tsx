@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { RECIPES } from "@/data";
 import { DIETS, REGIONS, type Diet, type Region } from "@/types/recipe";
 import { RecipeBrowser } from "@/components/RecipeBrowser";
+import { AllRecipesHeader } from "@/components/AllRecipesHeader";
 
 export const metadata: Metadata = { title: "All Recipes" };
 
@@ -16,11 +17,7 @@ export default async function AllRecipesPage({ searchParams }: { searchParams: S
 
   return (
     <main className="container">
-      <header className="page-header">
-        <p className="eyebrow">{RECIPES.length} recipes</p>
-        <h1>All Millet Recipes</h1>
-        <p className="hero-text">Filter by region and diet to find what you want to cook today.</p>
-      </header>
+      <AllRecipesHeader count={RECIPES.length} />
       <RecipeBrowser
         recipes={RECIPES}
         initialRegion={pick<Region>(region, REGIONS)}

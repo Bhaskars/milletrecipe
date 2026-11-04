@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
+import { LanguageProvider } from "@/components/LanguageProvider";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,11 +17,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <SiteHeader />
-        {children}
-        <footer className="site-footer">
-          <div className="container">Traditional recipes for every standard kitchen.</div>
-        </footer>
+        <LanguageProvider>
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </LanguageProvider>
       </body>
     </html>
   );

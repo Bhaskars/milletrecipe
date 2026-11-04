@@ -497,3 +497,201 @@ a:focus-visible {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* Header navigation, language and account */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.lang-switcher select {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  min-height: 36px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Login */
+.login-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  margin: 2.5rem auto;
+  max-width: 440px;
+}
+
+.login-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 1rem;
+}
+
+.login-form label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.login-form input {
+  font: inherit;
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 44px;
+}
+
+.login-form input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.login-form .button {
+  margin-top: 0.25rem;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.login-form .button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.form-error {
+  color: var(--nonveg);
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Recipe images */
+.dish-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  background: var(--accent-soft);
+}
+
+.final-dish {
+  margin: 1.25rem 0 0;
+  max-width: 520px;
+}
+
+.ingredients li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ingredient-icon {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+/* Admin */
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 1rem 0;
+}
+
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.roles-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.roles-table th,
+.roles-table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.roles-table th {
+  width: 35%;
+  color: var(--accent-strong);
+}
+
+@media (max-width: 480px) {
+  .site-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 0;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+  }
+
+  .roles-table th {
+    width: auto;
+  }
+
+  .roles-table th,
+  .roles-table td {
+    display: block;
+    width: 100%;
+  }
+}

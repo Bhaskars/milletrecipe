@@ -74,7 +74,7 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
         </ul>
       </section>
 
-      {plate && <NutritionAndPlate info={plate} />}
+      {plate && <NutritionAndPlate info={plate} title={text.title} />}
 
       <section className="detail-section" aria-labelledby="instructions-heading">
         <h2 id="instructions-heading">{t("detail.instructions")}</h2>

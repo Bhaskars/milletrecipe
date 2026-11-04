@@ -880,3 +880,56 @@ button.button:disabled {
 .plate-list li {
   margin-bottom: 0.4rem;
 }
+
+/* Per-serving plate table */
+.table-scroll {
+  overflow-x: auto;
+}
+
+.plate-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  margin: 0.5rem 0 0;
+}
+
+.plate-table th,
+.plate-table td {
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.plate-table td {
+  white-space: nowrap;
+}
+
+.plate-table thead th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.plate-table tfoot th,
+.plate-table tfoot td {
+  font-weight: 700;
+  border-bottom: none;
+  border-top: 2px solid var(--border);
+}
+
+.plate-table .plate-name {
+  display: block;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.plate-table .plate-how {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+  white-space: normal;
+}

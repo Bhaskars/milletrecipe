@@ -1,5 +1,7 @@
 /** A cooked or raw vegetable dish with a short way to make it. */
 export interface VegetableDish {
+  /** "raw" for uncooked salads and sticks; "cooked" for anything cooked. */
+  kind: "raw" | "cooked";
   name: string;
   how: string;
 }
@@ -11,6 +13,8 @@ export interface VegetableDish {
 export interface PlateInfo {
   /** Estimated calories (kcal) per serving. */
   kcal: number;
+  /** Estimated carbohydrate (g) per serving; used for glycemic load. */
+  carbsG: number;
   /** Estimated dietary fibre (g) per serving. */
   fibreG: number;
   /** Estimated glycemic index of the dish (glucose = 100). */

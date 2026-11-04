@@ -5,7 +5,9 @@ import {
   readAuthConfig,
   SESSION_COOKIE,
   SESSION_MAX_AGE_SECONDS,
+  type Session,
 } from "@/lib/auth";
+import { getUserStore, verifyPassword } from "@/lib/users";
 
 export const dynamic = "force-dynamic";
 
@@ -27,7 +29,18 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Login is not configured." }, { status: 500 });
   }
 
-  const session = authenticate(email, password, config.accounts);
+  let session: Session | null = authenticate(email, password, config.accounts);
+  if (!session) {
+    // Self-registered users can sign in only once an admin has approved them.
+    const store = await getUserStore();
+    const user = store ? await store.findByEmail(email) : null;
+    if (store && user && (await verifyPassword(password, user.passwordHash))) {
+      if (user.status === "pending") {
+        return NextResponse.json({ error: "pending" }, { status: 403 });
+      }
+      if (user.status === "approved") session = { email: user.email, role: "user" };
+    }
+  }
   if (!session) {
     return NextResponse.json({ error: "Invalid email or password." }, { status: 401 });
   }

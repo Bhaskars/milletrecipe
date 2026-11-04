@@ -23,7 +23,11 @@ Accounts come from environment variables, so no passwords are stored in the repo
 
 Copy `.env.example` to `.env.local` for local development. On Vercel, add the same variables under Project Settings → Environment Variables, then redeploy.
 
-There is no self-service sign-up. Accounts are managed through these variables. Adding a database is the next step if you need users to register.
+Self-registration needs a Postgres database:
+
+- `DATABASE_URL`: connection string for Postgres (Neon, Vercel Postgres, or any Postgres host)
+
+With it set, visitors can request an account at `/register`. A request stays **pending** and the user cannot sign in or see recipes until an admin approves it on the `/admin` dashboard (Approve / Reject). Passwords are stored only as scrypt hashes. Without `DATABASE_URL`, sign-up is switched off and accounts come only from the environment variables above.
 
 ## Languages
 

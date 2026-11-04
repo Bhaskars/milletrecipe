@@ -35,6 +35,7 @@ function safeEqual(a: string, b: string): boolean {
  * - AUTH_SECRET: signs session cookies (required)
  * - ADMIN_EMAIL / ADMIN_PASSWORD: the administrator account
  * - USERS: optional JSON array of {"email","password"} regular user accounts
+ * - DATABASE_URL: optional Postgres database for self-registered users (approved by the admin)
  */
 export function readAuthConfig(env: Record<string, string | undefined> = process.env): AuthConfig {
   // Values pasted into hosting dashboards often carry a trailing newline or space.
@@ -65,7 +66,8 @@ export function readAuthConfig(env: Record<string, string | undefined> = process
     }
   }
 
-  if (accounts.length === 0) {
+  // With a database, users can register and be approved there, so no env account is required.
+  if (accounts.length === 0 && !clean(env.DATABASE_URL)) {
     throw new Error("No login accounts are configured. Set ADMIN_EMAIL and ADMIN_PASSWORD (and optionally USERS).");
   }
 

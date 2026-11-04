@@ -3,6 +3,7 @@
 import { MILLETS } from "@/data/millets";
 import { RECIPES } from "@/data";
 import { useT } from "@/components/LanguageProvider";
+import { PendingUsers } from "@/components/PendingUsers";
 
 export function AdminDashboard({ email }: { email: string }) {
   const { t } = useT();
@@ -24,6 +25,8 @@ export function AdminDashboard({ email }: { email: string }) {
           <span className="stat-label">{t("admin.millets")}</span>
         </div>
       </section>
+
+      <PendingUsers />
 
       <section aria-labelledby="roles-heading">
         <h2 id="roles-heading">{t("admin.roles")}</h2>

@@ -36,6 +36,10 @@ With it set, visitors can request an account at `/register`. A request stays **p
 - Data: `src/data/rice.ts`. Types: `src/types/rice.ts`. Helpers: `src/lib/rice.ts`.
 - Benefits are traditional beliefs or commonly claimed effects, not established medical facts. Each page says so. Rice content is in English only.
 
+## Disclaimer
+
+Every page shows a short notice, and `/disclaimer` has the full text. The site states that its content is general information, not medical, nutritional or allergy advice. It covers health conditions, allergies, food safety, estimated nutrition figures, unreviewed translations and limitation of liability. Text is in `src/data/disclaimer.ts`. Have a qualified lawyer review it before relying on it.
+
 ## Languages
 
 English is the default. Hindi and Tamil are also available from the language selector in the header, and the choice is remembered in the browser. The interface and recipe titles and descriptions are translated. Ingredient names and cooking steps stay in English.

@@ -29,6 +29,13 @@ Self-registration needs a Postgres database:
 
 With it set, visitors can request an account at `/register`. A request stays **pending** and the user cannot sign in or see recipes until an admin approves it on the `/admin` dashboard (Approve / Reject). Passwords are stored only as scrypt hashes. Without `DATABASE_URL`, sign-up is switched off and accounts come only from the environment variables above.
 
+## Rice menu
+
+`/rice` lists 19 rice varieties in four groups: Everyday, Aromatic, Heritage and Whole grain. Each variety has its own page at `/rice/[id]` with the region, appearance, traditional uses, traditional and commonly claimed benefits, nutrition notes and cooking method. Heritage varieties include Mappillai Samba, Karuppu Kavuni, Navara, Kerala Matta, Pokkali and Chak-hao.
+
+- Data: `src/data/rice.ts`. Types: `src/types/rice.ts`. Helpers: `src/lib/rice.ts`.
+- Benefits are traditional beliefs or commonly claimed effects, not established medical facts. Each page says so. Rice content is in English only.
+
 ## Languages
 
 English is the default. Hindi and Tamil are also available from the language selector in the header, and the choice is remembered in the browser. The interface and recipe titles and descriptions are translated. Ingredient names and cooking steps stay in English.
@@ -74,6 +81,7 @@ src/
   lib/i18n.ts           Interface translations (English, Hindi, Tamil)
   lib/ingredients.ts    Ingredient families and dish drawings
   proxy.ts              Login gate for every page
+  types/rice.ts         Rice variety type and groups
   types/recipe.ts       Domain types and the allowed region, diet, course and difficulty values
 tests/
   data/                 Catalogue rules: 15 per millet, classification, detailed steps, veg/non-veg consistency

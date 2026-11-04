@@ -40,6 +40,7 @@ export function SiteHeader() {
         </Link>
         <nav aria-label="Main" className="site-nav">
           <Link href="/recipes">{t("nav.allRecipes")}</Link>
+          <Link href="/rice">Rice</Link>
           {session?.role === "admin" && <Link href="/admin">{t("nav.admin")}</Link>}
           {session && (
             <button type="button" className="link-button" onClick={logout}>

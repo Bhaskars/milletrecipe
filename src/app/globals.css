@@ -995,3 +995,20 @@ button.button:disabled {
   font-weight: 500;
   width: 45%;
 }
+
+/* Identification illustration on rice variety pages */
+.rice-figure {
+  margin: 1rem 0 1.5rem;
+  max-width: 28rem;
+}
+.rice-grain-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.rice-figure figcaption {
+  font-size: 0.85rem;
+  color: #6b5a48;
+  margin-top: 0.4rem;
+}

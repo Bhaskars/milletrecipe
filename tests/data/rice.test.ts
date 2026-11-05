@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { RICE_VARIETIES } from "@/data/rice";
 import { RICE_GROUPS } from "@/types/rice";
 import { getRiceById, riceLoad, riceMenu } from "@/lib/rice";
+import { RICE_ART } from "@/data/rice-art";
 
 describe("rice catalogue", () => {
   it("includes the named heritage varieties", () => {
@@ -57,6 +58,15 @@ describe("rice catalogue", () => {
       const load = riceLoad(rice);
       expect(load.glycemicLoad, rice.id).toBeCloseTo((n.gi * n.carbsG) / 100, 0);
       expect(load.sugarTsp, rice.id).toBeCloseTo(load.glycemicLoad / 4, 0);
+    }
+  });
+
+  it("has an identification illustration spec for every variety", () => {
+    for (const rice of RICE_VARIETIES) {
+      const art = RICE_ART[rice.id];
+      expect(art, rice.id).toBeDefined();
+      expect(art.fill, rice.id).toMatch(/^#[0-9a-f]{6}$/i);
+      expect(art.edge, rice.id).toMatch(/^#[0-9a-f]{6}$/i);
     }
   });
 });

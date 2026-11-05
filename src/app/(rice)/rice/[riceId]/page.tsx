@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { RICE_VARIETIES } from "@/data/rice";
 import { getRiceById, riceLoad } from "@/lib/rice";
+import { RiceGrainArt } from "@/components/RiceGrainArt";
 
 type Params = { riceId: string };
 
@@ -32,6 +33,11 @@ export default async function RiceVarietyPage({ params }: { params: Promise<Para
         <p className="local-names">{rice.localNames.join(" · ")}</p>
         <p className="lead">{rice.description}</p>
       </header>
+
+      <figure className="rice-figure">
+        <RiceGrainArt riceId={rice.id} />
+        <figcaption>Illustration of the uncooked grain, to help identify it. It is a drawing, not a photograph.</figcaption>
+      </figure>
 
       <dl className="facts">
         <div>

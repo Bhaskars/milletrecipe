@@ -2,10 +2,312 @@ import type { Recipe } from "@/types/recipe";
 import type { LineContent } from "@/data/i18n-content/sorghum";
 import type { PlateInfo } from "@/types/plate";
 
-/** proso-millet recipes proso-millet-36 to proso-millet-40. Not yet written: stub so the index compiles. */
-export const PROSO_MILLET_BATCH_5 = {
-  recipes: [] as Recipe[],
-  content: {} as Record<string, { hi: LineContent; ta: LineContent }>,
-  translations: {} as Record<string, { hi: { title: string; description: string }; ta: { title: string; description: string } }>,
-  plate: {} as Record<string, PlateInfo>,
+/** proso-millet recipes proso-millet-36 to proso-millet-40 with full English, Hindi and Tamil content and plate data. */
+export const PROSO_MILLET_BATCH_5: {
+  recipes: Recipe[];
+  content: Record<string, { hi: LineContent; ta: LineContent }>;
+  translations: Record<string, { hi: { title: string; description: string }; ta: { title: string; description: string } }>;
+  plate: Record<string, PlateInfo>;
+} = {
+  recipes: [
+    {
+      id: "proso-millet-36",
+      title: "Panivaragu Paruppu Adai",
+      milletId: "proso-millet",
+      region: "South Indian",
+      diet: "Vegetarian",
+      course: "Breakfast",
+      description: "Crisp, savoury pancakes of proso millet and lentils studded with onion, curry leaves and coriander, a protein-rich breakfast from Tamil Nadu homes.",
+      servings: 4,
+      prepTimeMinutes: 20,
+      cookTimeMinutes: 25,
+      difficulty: "Medium",
+      ingredients: [
+        "1 cup proso millet (panivaragu), soaked for 3 hours",
+        "1/4 cup toor dal, soaked for 3 hours",
+        "1/4 cup chana dal, soaked for 3 hours",
+        "4 dried red chillies",
+        "1 tsp cumin seeds",
+        "1/2 tsp asafoetida powder",
+        "1 small onion, finely chopped",
+        "2 tbsp fresh coriander leaves, chopped",
+        "8 curry leaves, chopped",
+        "1 tsp salt",
+        "3 tbsp sesame oil or ghee for shallow-frying",
+      ],
+      steps: [
+        "Drain the soaked millet and both dals, then grind them with the red chillies, cumin, asafoetida and salt into a thick, slightly coarse batter using as little water as possible.",
+        "Transfer the batter to a bowl and fold in the chopped onion, curry leaves and coriander.",
+        "Let the batter rest for 10 minutes so the millet absorbs moisture and the batter thickens.",
+        "Heat a flat iron tawa over medium heat and grease it lightly with a few drops of sesame oil.",
+        "Spread a ladleful of batter into a round about 6 inches wide, using the back of the ladle, and make a small hole in the centre.",
+        "Drizzle half a teaspoon of oil around the edges and cook for 2-3 minutes until the underside is golden.",
+        "Flip the adai, cook the other side for another 1-2 minutes until crisp, and repeat with the rest of the batter.",
+        "Serve hot with coconut chutney or a little jaggery.",
+      ],
+    },
+    {
+      id: "proso-millet-37",
+      title: "Panivaragu Medu Vadai",
+      milletId: "proso-millet",
+      region: "South Indian",
+      diet: "Vegetarian",
+      course: "Snack",
+      description: "Golden, crisp savoury doughnuts of millet and urad dal batter, fried in oil and served with sambar, a classic South Indian tea-time snack.",
+      servings: 4,
+      prepTimeMinutes: 25,
+      cookTimeMinutes: 20,
+      difficulty: "Medium",
+      ingredients: [
+        "1 cup proso millet (panivaragu), soaked for 3 hours and drained",
+        "1/2 cup whole urad dal, soaked for 3 hours and drained",
+        "1 tsp cumin seeds",
+        "1 small onion, finely chopped",
+        "1 green chilli, finely chopped",
+        "8 curry leaves, chopped",
+        "1 tsp fresh ginger, grated",
+        "1/2 tsp salt",
+        "500 ml sunflower oil or groundnut oil, for deep-frying",
+      ],
+      steps: [
+        "Grind the soaked millet with a little water to a thick, smooth batter, then grind the urad dal separately to a fluffy, very thick batter.",
+        "Mix both batters together with the salt and beat them by hand for 2 minutes until light and airy.",
+        "Fold in the cumin seeds, onion, green chilli, ginger and curry leaves.",
+        "Heat the oil in a deep kadai over medium heat until a drop of batter sizzles and rises to the surface at once.",
+        "Wet your palm, take a portion of batter, and pat it into a flat disc about 3 inches wide with a hole in the centre.",
+        "Slide the vada into the oil and fry on both sides for 3-4 minutes until golden and crisp.",
+        "Drain on kitchen paper and repeat with the remaining batter.",
+        "Serve hot with sambar and coconut chutney.",
+      ],
+    },
+    {
+      id: "proso-millet-38",
+      title: "Panivaragu Thepla",
+      milletId: "proso-millet",
+      region: "West Indian",
+      diet: "Vegetarian",
+      course: "Breakfast",
+      description: "Soft, spiced flatbreads from Gujarat made with millet flour, fenugreek leaves and yoghurt, packed for travel and eaten with pickle.",
+      servings: 4,
+      prepTimeMinutes: 20,
+      cookTimeMinutes: 15,
+      difficulty: "Easy",
+      ingredients: [
+        "1 cup proso millet flour (panivaragu atta)",
+        "1/2 cup whole wheat flour, plus extra for dusting",
+        "1/2 cup fresh fenugreek leaves (methi), finely chopped",
+        "1/3 cup plain yoghurt",
+        "1 tsp ginger-green chilli paste",
+        "1/2 tsp turmeric powder, 1 tsp red chilli powder, 1 tsp cumin powder",
+        "1 tsp salt, 1 tsp sugar",
+        "2 tbsp oil, for the dough",
+        "1 tbsp ghee, for cooking",
+        "about 2-3 tbsp water, as needed",
+      ],
+      steps: [
+        "Mix both flours, salt, sugar, turmeric, chilli and cumin powders in a large bowl.",
+        "Add the methi leaves, ginger-chilli paste, yoghurt and 2 tbsp oil, and rub them into the flour.",
+        "Add water little by little and knead into a soft, smooth dough, then rest it covered for 15 minutes.",
+        "Divide into 12 equal balls and roll each into a thin round about 5 inches wide, using dry flour for dusting.",
+        "Heat a tawa over medium heat and cook each thepla for about 1 minute per side until light brown spots appear.",
+        "Brush lightly with ghee on both sides and press with a cloth so it puffs slightly.",
+        "Stack the theplas in a cloth so they stay soft and warm.",
+        "Serve with plain yoghurt or mango pickle.",
+      ],
+    },
+    {
+      id: "proso-millet-39",
+      title: "Panivaragu Pakoda",
+      milletId: "proso-millet",
+      region: "North Indian",
+      diet: "Vegetarian",
+      course: "Snack",
+      description: "Crisp onion and spinach fritters made with millet and gram flour, deep-fried until golden and served with mint chutney on rainy evenings.",
+      servings: 4,
+      prepTimeMinutes: 15,
+      cookTimeMinutes: 15,
+      difficulty: "Easy",
+      ingredients: [
+        "1/2 cup proso millet flour (panivaragu atta)",
+        "1/2 cup besan (gram flour)",
+        "2 tbsp rice flour",
+        "1 small onion, thinly sliced",
+        "1 cup spinach leaves, finely chopped",
+        "1 green chilli, finely chopped",
+        "1 tsp ginger, finely grated",
+        "1/2 tsp carom seeds (ajwain), 1/2 tsp red chilli powder",
+        "1/2 tsp salt",
+        "2 tbsp hot oil, plus 500 ml oil for deep-frying",
+        "3-4 tbsp water, as needed",
+      ],
+      steps: [
+        "Combine the millet flour, besan, rice flour, salt, chilli powder and carom seeds in a bowl.",
+        "Add the onion, spinach, green chilli and ginger, and toss to coat them lightly in the flour.",
+        "Add 2 tbsp hot oil and mix, then sprinkle in water a spoonful at a time to make a thick batter that holds its shape.",
+        "Heat the frying oil in a kadai over medium heat until a pinch of batter rises to the surface quickly.",
+        "Drop spoonfuls of the mixture into the oil, spreading them gently so they are not too thick.",
+        "Fry for 3-4 minutes, turning once, until crisp and golden brown on all sides.",
+        "Drain the pakoras on paper towels and fry the rest in batches.",
+        "Serve hot with mint-coriander chutney and tomato ketchup.",
+      ],
+    },
+    {
+      id: "proso-millet-40",
+      title: "Panivaragu Chicken Kuzhambu",
+      milletId: "proso-millet",
+      region: "South Indian",
+      diet: "Non-Vegetarian",
+      course: "Main Course",
+      description: "A fiery Chettinad-style chicken curry in a coconut and tamarind gravy, served over steamed proso millet for a hearty traditional Tamil meal.",
+      servings: 4,
+      prepTimeMinutes: 20,
+      cookTimeMinutes: 40,
+      difficulty: "Medium",
+      ingredients: [
+        "500 g chicken, bone-in, cut into pieces",
+        "2 cups cooked proso millet (panivaragu), to serve",
+        "2 tbsp sesame oil (gingelly oil)",
+        "1 tsp mustard seeds, 1 tsp fennel seeds",
+        "1 medium onion, finely sliced",
+        "8 curry leaves",
+        "1 tbsp ginger-garlic paste",
+        "2 tomatoes, chopped",
+        "1 tsp turmeric powder, 1 1/2 tsp red chilli powder (divided), 1 tbsp coriander powder",
+        "2 tbsp fresh grated coconut, ground into a paste with 1/4 cup water",
+        "1 tsp tamarind paste",
+        "1 tsp salt",
+        "1 cup water",
+      ],
+      steps: [
+        "Marinate the chicken pieces with the turmeric, half the chilli powder and salt for 15 minutes.",
+        "Heat the sesame oil in a heavy pan over medium heat and splutter the mustard and fennel seeds.",
+        "Add the sliced onion and curry leaves and fry until golden brown, about 6-8 minutes.",
+        "Stir in the ginger-garlic paste, then add the tomatoes and cook until soft and mushy.",
+        "Add the coriander powder, remaining chilli powder and chicken, and sauté for 5 minutes to seal in the spices.",
+        "Pour in the coconut paste, tamarind and water, cover and simmer for 20 minutes until the chicken is cooked through and the gravy thickens.",
+        "Adjust the salt and spice, then serve hot over steamed proso millet.",
+      ],
+    },
+  ],
+  content: {
+    "proso-millet-36": {
+      hi: {
+        ingredients: ["1 कप पनिवरागु (प्रोसो मिलेट), 3 घंटे भिगोया हुआ", "1/4 कप तुअर दाल, 3 घंटे भिगोई हुई", "1/4 कप चना दाल, 3 घंटे भिगोई हुई", "4 सूखी लाल मिर्च", "1 छोटा चम्मच जीरा", "1/2 छोटा चम्मच हींग पाउडर", "1 छोटी प्याज़, बारीक कटी", "2 बड़े चम्मच हरा धनिया, कटा", "8 करी पत्ते, कटे", "1 छोटा चम्मच नमक", "3 बड़े चम्मच तिल का तेल या घी, शैलो फ्राई के लिए"],
+        steps: ["भीगे मिलेट और दालों को निथारकर सूखी लाल मिर्च, जीरा, हींग और नमक के साथ थोड़े पानी में मोटा, हल्का दानेदार घोल बनने तक पीसें।", "घोल को बर्तन में निकालकर प्याज़, करी पत्ते और धनिया मिलाएँ।", "घोल को 10 मिनट आराम दें ताकि मिलेट पानी सोखे और घोल गाढ़ा हो जाए।", "भारी तवे को मध्यम आँच पर गरम करें और तिल के तेल की कुछ बूँदों से हल्का चिकना करें।", "एक कलछी घोल लेकर कलछी के पिछले हिस्से से लगभग 6 इंच का गोल अडाई फैलाएँ और बीच में छोटा छेद करें।", "किनारों पर 1/2 छोटा चम्मच तेल डालें और 2-3 मिनट नीचे से सुनहरा होने दें।", "अडाई पलटें, दूसरी तरफ 1-2 मिनट कुरकुरा होने तक सेंकें और बचे घोल से यही दोहराएँ।", "गरमागरम नारियल की चटनी या थोड़े गुड़ के साथ परोसें।"],
+      },
+      ta: {
+        ingredients: ["1 கப் பனிவரகு, 3 மணி நேரம் ஊறவைத்தது", "1/4 கப் துவரம் பருப்பு, 3 மணி நேரம் ஊறவைத்தது", "1/4 கப் கடலைப் பருப்பு, 3 மணி நேரம் ஊறவைத்தது", "4 காய்ந்த சிவப்பு மிளகாய்", "1 டீஸ்பூன் சீரகம்", "1/2 டீஸ்பூன் பெருங்காயத் தூள்", "1 சிறிய வெங்காயம், பொடியாக நறுக்கியது", "2 டேபிள்ஸ்பூன் கொத்தமல்லி இலை, நறுக்கியது", "8 கறிவேப்பிலை, நறுக்கியது", "1 டீஸ்பூன் உப்பு", "3 டேபிள்ஸ்பூன் எள் எண்ணெய் அல்லது நெய், ஷாலோ ஃப்ரை செய்ய"],
+        steps: ["ஊறிய தானியத்தையும் பருப்புகளையும் வடிகட்டி, மிளகாய், சீரகம், பெருங்காயம், உப்புடன் சிறிது தண்ணீர் சேர்த்து கொரகொரப்பாக அரைக்கவும்.", "மாவை ஒரு பாத்திரத்தில் எடுத்து வெங்காயம், கறிவேப்பிலை, கொத்தமல்லி சேர்த்து கலக்கவும்.", "தானியம் நீரை உறிஞ்ச மாவு கெட்டியாக 10 நிமிடம் ஓய்வு கொடுக்கவும்.", "கனமான தவாவை மிதமான தீயில் சூடாக்கி சில துளி எள் எண்ணெயால் லேசாக தடவவும்.", "ஒரு கரண்டி மாவை எடுத்து கரண்டியின் பின்புறத்தால் சுமார் 6 அங்குல வட்டமாக தட்டி, நடுவில் ஒரு சிறு துளை இடவும்.", "ஓரங்களில் 1/2 டீஸ்பூன் எண்ணெய் ஊற்றி, அடிப்பகுதி பொன்னிறமாகும் வரை 2-3 நிமிடம் வேகவிடவும்.", "அடையை திருப்பி மறுபக்கம் 1-2 நிமிடம் மொறுமொறுப்பாக வேகவிட்டு, மீதி மாவிலும் இதையே செய்யவும்.", "சூடாக தேங்காய் சட்னி அல்லது கொஞ்சம் வெல்லத்துடன் பரிமாறவும்."],
+      },
+    },
+    "proso-millet-37": {
+      hi: {
+        ingredients: ["1 कप पनिवरागु (प्रोसो मिलेट), 3 घंटे भिगोकर निथारा हुआ", "1/2 कप साबुत उड़द दाल, 3 घंटे भिगोकर निथारी हुई", "1 छोटा चम्मच जीरा", "1 छोटी प्याज़, बारीक कटी", "1 हरी मिर्च, बारीक कटी", "8 करी पत्ते, कटे", "1 छोटा चम्मच अदरक, कसा हुआ", "1/2 छोटा चम्मच नमक", "500 मि.ली. सूरजमुखी या मूँगफली तेल, डीप फ्राई के लिए"],
+        steps: ["मिलेट को थोड़े पानी के साथ गाढ़ा, चिकना घोल बनने तक पीसें, फिर उड़द दाल को अलग से बहुत गाढ़ा और फूला हुआ घोल बनने तक पीसें।", "दोनों घोल नमक के साथ मिलाकर हाथ से 2 मिनट फेंटें ताकि हल्का और हवादार हो जाए।", "जीरा, प्याज़, हरी मिर्च, अदरक और करी पत्ते मिलाएँ।", "कढ़ाई में मध्यम आँच पर तेल गरम करें, जब घोल की एक बूँद तुरंत उठकर तैरने लगे तो तेल तैयार है।", "हथेली गीली करके घोल का एक हिस्सा लें और बीच में छेद वाली लगभग 3 इंच की चपटी टिकिया बनाएँ।", "वड़े को तेल में सरकाएँ और दोनों तरफ 3-4 मिनट सुनहरा और कुरकुरा होने तक तलें।", "किचन पेपर पर निकालें और बचे घोल से यही दोहराएँ।", "गरम सांभर और नारियल की चटनी के साथ परोसें।"],
+      },
+      ta: {
+        ingredients: ["1 கப் பனிவரகு, 3 மணி நேரம் ஊறவைத்து வடிகட்டியது", "1/2 கப் முழு உளுந்து, 3 மணி நேரம் ஊறவைத்து வடிகட்டியது", "1 டீஸ்பூன் சீரகம்", "1 சிறிய வெங்காயம், பொடியாக நறுக்கியது", "1 பச்சை மிளகாய், பொடியாக நறுக்கியது", "8 கறிவேப்பிலை, நறுக்கியது", "1 டீஸ்பூன் இஞ்சி, துருவியது", "1/2 டீஸ்பூன் உப்பு", "500 மி.லி. சூரியகாந்தி அல்லது கடலை எண்ணெய், பொரிக்க"],
+        steps: ["தானியத்தை கொஞ்சம் தண்ணீருடன் கெட்டியாக, மென்மையாக அரைக்கவும்; உளுந்தை தனியாக மிகவும் கெட்டியாகவும் பஞ்சு போலவும் அரைக்கவும்.", "இரு மாவையும் உப்புடன் கலந்து கையால் 2 நிமிடம் அடித்து லேசாகும் வரை கலக்கவும்.", "சீரகம், வெங்காயம், பச்சை மிளகாய், இஞ்சி, கறிவேப்பிலை சேர்த்து கலக்கவும்.", "ஆழமான கடாயில் எண்ணெயை மிதமான தீயில் சூடாக்கவும்; மாவின் ஒரு துளி உடனே மேலே வந்தால் எண்ணெய் தயார்.", "ஈரக் கையில் மாவை எடுத்து நடுவில் துளையுடன் 3 அங்குல வட்டமான தட்டையான வடையாக தட்டவும்.", "வடையை எண்ணெயில் போட்டு இரு பக்கமும் 3-4 நிமிடம் பொன்னிறமாகவும் மொறுமொறுப்பாகவும் வேகவிடவும்.", "கிச்சன் பேப்பரில் வடிகட்டி, மீதி மாவிலும் இதையே செய்யவும்.", "சூடான சாம்பார் மற்றும் தேங்காய் சட்னியுடன் பரிமாறவும்."],
+      },
+    },
+    "proso-millet-38": {
+      hi: {
+        ingredients: ["1 कप पनिवरागु (प्रोसो मिलेट) का आटा", "1/2 कप गेहूँ का आटा, बेलने के लिए और अतिरिक्त", "1/2 कप ताज़ी मेथी के पत्ते, बारीक कटे", "1/3 कप सादा दही", "1 छोटा चम्मच अदरक-हरी मिर्च का पेस्ट", "1/2 छोटा चम्मच हल्दी, 1 छोटा चम्मच लाल मिर्च पाउडर, 1 छोटा चम्मच जीरा पाउडर", "1 छोटा चम्मच नमक, 1 छोटा चम्मच चीनी", "2 बड़े चम्मच तेल, आटा गूँधने के लिए", "1 बड़ा चम्मच घी, सेंकने के लिए", "लगभग 2-3 बड़े चम्मच पानी, ज़रूरत अनुसार"],
+        steps: ["दोनों आटे, नमक, चीनी, हल्दी, मिर्च और जीरा पाउडर एक बड़े बर्तन में मिलाएँ।", "मेथी, अदरक-हरी मिर्च का पेस्ट, दही और 2 बड़े चम्मच तेल डालकर आटे में मसलें।", "थोड़ा-थोड़ा पानी डालकर नरम, चिकना आटा गूँधें और ढककर 15 मिनट रखें।", "आटे को 12 बराबर गोलों में बाँटें और हर गोले को सूखे आटे से लगभग 5 इंच की पतली रोटी बेलें।", "तवे को मध्यम आँच पर गरम करें और हर थेपला को दोनों तरफ लगभग 1 मिनट सेंकें जब तक हल्के भूरे धब्बे न आ जाएँ।", "दोनों तरफ थोड़ा घी लगाएँ और कपड़े से दबाएँ ताकि हल्का फूल जाए।", "थेपलों को कपड़े में रखें ताकि नरम और गरम रहें।", "सादे दही या आम के अचार के साथ परोसें।"],
+      },
+      ta: {
+        ingredients: ["1 கப் பனிவரகு மாவு", "1/2 கப் கோதுமை மாவு, தூவுவதற்கு கூடுதலாக", "1/2 கப் புதிய வெந்தயக் கீரை, பொடியாக நறுக்கியது", "1/3 கப் சாதாத் தயிர்", "1 டீஸ்பூன் இஞ்சி-பச்சை மிளகாய் விழுது", "1/2 டீஸ்பூன் மஞ்சள் தூள், 1 டீஸ்பூன் மிளகாய்த் தூள், 1 டீஸ்பூன் சீரகத் தூள்", "1 டீஸ்பூன் உப்பு, 1 டீஸ்பூன் சர்க்கரை", "2 டேபிள்ஸ்பூன் எண்ணெய், மாவு பிசைய", "1 டேபிள்ஸ்பூன் நெய், சுட", "தேவையான அளவு 2-3 டேபிள்ஸ்பூன் தண்ணீர்"],
+        steps: ["இரு மாவுகள், உப்பு, சர்க்கரை, மஞ்சள், மிளகாய், சீரகத் தூள்களை பெரிய பாத்திரத்தில் கலக்கவும்.", "வெந்தயக் கீரை, இஞ்சி-பச்சை மிளகாய் விழுது, தயிர், 2 டேபிள்ஸ்பூன் எண்ணெய் சேர்த்து மாவில் தேய்த்து கலக்கவும்.", "சிறிது சிறிதாக தண்ணீர் சேர்த்து மென்மையான மாவாக பிசைந்து மூடி 15 நிமிடம் வைக்கவும்.", "மாவை 12 சம உருண்டைகளாக்கி, ஒவ்வொன்றையும் உலர்ந்த மாவில் புரட்டி சுமார் 5 அங்குல மெல்லிய சப்பாத்தியாக தேய்க்கவும்.", "தவாவை மிதமான தீயில் சூடாக்கி ஒவ்வொரு தேப்லாவையும் இரு பக்கமும் சுமார் 1 நிமிடம் வேகவிடவும்.", "இரு பக்கமும் சிறிது நெய் தடவி, துணியால் அழுத்தி லேசாக உப்ப விடவும்.", "தேப்லாக்களை துணியில் அடுக்கி வைத்து மென்மையாகவும் சூடாகவும் இருக்கச் செய்யவும்.", "சாதாத் தயிர் அல்லது மாங்காய் ஊறுகாயுடன் பரிமாறவும்."],
+      },
+    },
+    "proso-millet-39": {
+      hi: {
+        ingredients: ["1/2 कप पनिवरागु (प्रोसो मिलेट) का आटा", "1/2 कप बेसन", "2 बड़े चम्मच चावल का आटा", "1 छोटी प्याज़, पतली कटी", "1 कप पालक के पत्ते, बारीक कटे", "1 हरी मिर्च, बारीक कटी", "1 छोटा चम्मच अदरक, कसा हुआ", "1/2 छोटा चम्मच अजवाइन, 1/2 छोटा चम्मच लाल मिर्च पाउडर", "1/2 छोटा चम्मच नमक", "2 बड़े चम्मच गरम तेल, और 500 मि.ली. तलने के लिए तेल", "3-4 बड़े चम्मच पानी, ज़रूरत अनुसार"],
+        steps: ["पनिवरागु आटा, बेसन, चावल का आटा, नमक, मिर्च और अजवाइन एक बर्तन में मिलाएँ।", "प्याज़, पालक, हरी मिर्च और अदरक डालकर सबको आटे में हल्के हाथ से लपेटें।", "2 बड़े चम्मच गरम तेल डालकर मिलाएँ और धीरे-धीरे पानी डालते हुए गाढ़ा, चम्मच से गिरने लायक घोल बनाएँ।", "तलने का तेल कढ़ाई में मध्यम आँच पर गरम करें जब तक घोल की एक चुटकी तुरंत ऊपर न आ जाए।", "घोल के चम्मच भरकर तेल में धीरे से डालें और बहुत मोटा न रखें।", "3-4 मिनट तलें, बीच में पलटते रहें, जब तक सब तरफ से कुरकुरे और सुनहरे न हो जाएँ।", "पकौड़े किचन पेपर पर निकालें और बचे घोल को बैचों में तलें।", "पुदीना-धनिया की चटनी और टमाटर सॉस के साथ गरम परोसें।"],
+      },
+      ta: {
+        ingredients: ["1/2 கப் பனிவரகு மாவு", "1/2 கப் கடலை மாவு", "2 டேபிள்ஸ்பூன் அரிசி மாவு", "1 சிறிய வெங்காயம், மெல்லியதாக நறுக்கியது", "1 கப் பாலக் கீரை, பொடியாக நறுக்கியது", "1 பச்சை மிளகாய், பொடியாக நறுக்கியது", "1 டீஸ்பூன் இஞ்சி, துருவியது", "1/2 டீஸ்பூன் ஓமம், 1/2 டீஸ்பூன் மிளகாய்த் தூள்", "1/2 டீஸ்பூன் உப்பு", "2 டேபிள்ஸ்பூன் சூடான எண்ணெய், மற்றும் 500 மி.லி. பொரிக்க எண்ணெய்", "3-4 டேபிள்ஸ்பூன் தண்ணீர், தேவைக்கேற்ப"],
+        steps: ["பனிவரகு மாவு, கடலை மாவு, அரிசி மாவு, உப்பு, மிளகாய்த் தூள், ஓமம் ஒன்றாக கலக்கவும்.", "வெங்காயம், பாலக் கீரை, பச்சை மிளகாய், இஞ்சி சேர்த்து மாவில் லேசாக புரட்டவும்.", "2 டேபிள்ஸ்பூன் சூடான எண்ணெய் சேர்த்து கலந்து, ஒரு ஸ்பூன் தண்ணீராக சேர்த்து கெட்டியான, கரண்டியில் நிற்கும் கலவையாக்கவும்.", "பொரிக்கும் எண்ணெயை கடாயில் மிதமான தீயில் சூடாக்கவும்; மாவின் ஒரு துளி உடனே மேலே வந்தால் தயார்.", "கரண்டியால் மாவை எடுத்து மெதுவாக எண்ணெயில் விடவும்; மிகவும் தடிமனாக இல்லாமல் பார்த்துக் கொள்ளவும்.", "நடுத்தர தீயில் 3-4 நிமிடம் திருப்பிப் போட்டு எல்லா பக்கமும் மொறுமொறுப்பாகவும் பொன்னிறமாகவும் வேகவிடவும்.", "பக்கோடாக்களை கிச்சன் பேப்பரில் வடிகட்டி, மீதியை தொகுதி தொகுதியாக பொரிக்கவும்.", "புதினா-கொத்தமல்லி சட்னி மற்றும் தக்காளி சாஸுடன் சூடாக பரிமாறவும்."],
+      },
+    },
+    "proso-millet-40": {
+      hi: {
+        ingredients: ["500 ग्राम चिकन, हड्डी वाला, टुकड़ों में कटा", "2 कप पका पनिवरागु (प्रोसो मिलेट), परोसने के लिए", "2 बड़े चम्मच तिल का तेल", "1 छोटा चम्मच सरसों, 1 छोटा चम्मच सौंफ", "1 मध्यम प्याज़, बारीक स्लाइस की हुई", "8 करी पत्ते", "1 बड़ा चम्मच अदरक-लहसुन पेस्ट", "2 टमाटर, कटे हुए", "1 छोटा चम्मच हल्दी, 1 1/2 छोटा चम्मच लाल मिर्च पाउडर (बँटा हुआ), 1 बड़ा चम्मच धनिया पाउडर", "2 बड़े चम्मच कसा हुआ ताज़ा नारियल, 1/4 कप पानी के साथ पीसा हुआ", "1 छोटा चम्मच इमली का पेस्ट", "1 छोटा चम्मच नमक", "1 कप पानी"],
+        steps: ["चिकन को हल्दी, आधा मिर्च पाउडर और नमक के साथ 15 मिनट मैरिनेट करें।", "मोटे बर्तन में तिल का तेल मध्यम आँच पर गरम करें और सरसों व सौंफ चटकाएँ।", "प्याज़ और करी पत्ते डालकर 6-8 मिनट सुनहरे होने तक भूनें।", "अदरक-लहसुन पेस्ट डालें, फिर टमाटर डालकर नरम और गूदेदार होने तक पकाएँ।", "धनिया पाउडर, बचा मिर्च पाउडर और चिकन डालकर 5 मिनट मसालों को भूनें।", "नारियल का पेस्ट, इमली और पानी डालकर ढककर 20 मिनट धीमी आँच पर पकाएँ जब तक चिकन पूरी तरह पक जाए और ग्रेवी गाढ़ी हो जाए।", "नमक और मिर्च जाँचें, फिर भाप में पके पनिवरागु के साथ गरम परोसें।"],
+      },
+      ta: {
+        ingredients: ["500 கிராம் சிக்கன், எலும்புடன், துண்டுகளாக வெட்டியது", "2 கப் வேகவைத்த பனிவரகு, பரிமாற", "2 டேபிள்ஸ்பூன் நல்லெண்ணெய்", "1 டீஸ்பூன் கடுகு, 1 டீஸ்பூன் சோம்பு", "1 பெரிய வெங்காயம், மெல்லியதாக நறுக்கியது", "8 கறிவேப்பிலை", "1 டேபிள்ஸ்பூன் இஞ்சி-பூண்டு விழுது", "2 தக்காளி, நறுக்கியது", "1 டீஸ்பூன் மஞ்சள் தூள், 1 1/2 டீஸ்பூன் மிளகாய்த் தூள் (பிரித்தது), 1 டேபிள்ஸ்பூன் மல்லித் தூள்", "2 டேபிள்ஸ்பூன் துருவிய தேங்காய், 1/4 கப் தண்ணீருடன் அரைத்தது", "1 டீஸ்பூன் புளி விழுது", "1 டீஸ்பூன் உப்பு", "1 கப் தண்ணீர்"],
+        steps: ["சிக்கனை மஞ்சள், பாதி மிளகாய்த் தூள், உப்புடன் 15 நிமிடம் ஊறவைக்கவும்.", "கனமான பாத்திரத்தில் நல்லெண்ணெயை மிதமான தீயில் சூடாக்கி கடுகு, சோம்பு தாளிக்கவும்.", "வெங்காயம், கறிவேப்பிலை சேர்த்து 6-8 நிமிடம் பொன்னிறமாக வதக்கவும்.", "இஞ்சி-பூண்டு விழுது சேர்த்து, பின்னர் தக்காளி போட்டு மிருதுவாக குழையும் வரை வேகவிடவும்.", "மல்லித் தூள், மீதி மிளகாய்த் தூள், சிக்கன் சேர்த்து மசாலா ஒட்டும் வரை 5 நிமிடம் வதக்கவும்.", "தேங்காய் விழுது, புளி, தண்ணீர் சேர்த்து மூடி 20 நிமிடம் சிக்கன் வெந்து குழம்பு கெட்டியாகும் வரை மெல்லிய தீயில் கொதிக்க விடவும்.", "உப்பு, காரம் சரிபார்த்து, ஆவியில் வெந்த பனிவரகுடன் சூடாக பரிமாறவும்."],
+      },
+    },
+  },
+  translations: {
+    "proso-millet-36": {
+      hi: { title: "पनिवरागु अडाई", description: "प्रोसो मिलेट और दालों से बने कुरकुरे, मसालेदार पैनकेक, प्याज़ और करी पत्तों के साथ। दक्षिण भारत के घरों का पौष्टिक नाश्ता।" },
+      ta: { title: "பனிவரகு அடை", description: "பனிவரகு மற்றும் பருப்பு கலந்த மொறுமொறுப்பான மசாலா அடை, வெங்காயம் மற்றும் கறிவேப்பிலையுடன். தமிழ்நாட்டு வீடுகளின் சத்தான காலை உணவு." },
+    },
+    "proso-millet-37": {
+      hi: { title: "पनिवरागु मेदु वड़ा", description: "मिलेट और उड़द दाल के घोल से बने सुनहरे, कुरकुरे वड़े, सांभर के साथ परोसे जाने वाले दक्षिण भारत के लोकप्रिय चाय-नाश्ते।" },
+      ta: { title: "பனிவரகு மெதுவடை", description: "பனிவரகு மற்றும் உளுந்து மாவில் செய்த பொன்னிறமான, மொறுமொறுப்பான வடை, சாம்பாருடன் பரிமாறப்படும் பாரம்பரிய சிற்றுண்டி." },
+    },
+    "proso-millet-38": {
+      hi: { title: "पनिवरागु थेपला", description: "गुजरात की नरम, मसालेदार रोटियाँ, पनिवरागु आटे, मेथी और दही से बनी, यात्रा के लिए साथ ले जाने वाला पौष्टिक नाश्ता।" },
+      ta: { title: "பனிவரகு தேப்லா", description: "பனிவரகு மாவு, வெந்தயக் கீரை மற்றும் தயிருடன் செய்த மென்மையான குஜராத்தி மசாலா சப்பாத்தி, பயணங்களுக்கு ஏற்றது." },
+    },
+    "proso-millet-39": {
+      hi: { title: "पनिवरागु पकौड़े", description: "पनिवरागु और बेसन के आटे से बने कुरकुरे प्याज़-पालक पकौड़े, बारिश के दिनों में पुदीना चटनी के साथ परोसे जाने वाले।" },
+      ta: { title: "பனிவரகு பக்கோடா", description: "பனிவரகு மற்றும் கடலை மாவில் செய்த வெங்காய, பாலக் கீரை பக்கோடா. மழைக்கால மாலை நேர சிற்றுண்டி." },
+    },
+    "proso-millet-40": {
+      hi: { title: "पनिवरागु चिकन कुज़ाम्बु", description: "नारियल और इमली की गाढ़ी ग्रेवी में पकाया तीखा चेट्टिनाड शैली का चिकन, भाप में पके पनिवरागु के साथ परोसा जाने वाला तमिल भोजन।" },
+      ta: { title: "பனிவரகு சிக்கன் குழம்பு", description: "தேங்காய் மற்றும் புளி கலந்த கெட்டியான குழம்பில் சமைத்த காரமான செட்டிநாடு பாணி சிக்கன், ஆவியில் வெந்த பனிவரகுடன் பரிமாறப்படும் உணவு." },
+    },
+  },
+  plate: {
+    "proso-millet-36": {
+      kcal: 210, carbsG: 34, fibreG: 6, gi: 52,
+      minerals: ["iron", "magnesium", "phosphorus"],
+      raw: { kind: "raw", name: "Cucumber and tomato salad", how: "Dice one cucumber and one tomato and toss with lemon juice, black salt and chopped coriander." },
+      sides: [
+        { kind: "cooked", name: "Beans thoran", how: "Stir-fry chopped beans with grated coconut, mustard seeds and curry leaves until just tender." },
+        { kind: "cooked", name: "Carrot poriyal", how: "Sauté grated carrot with mustard seeds, urad dal and a little grated coconut until tender." },
+      ],
+    },
+    "proso-millet-37": {
+      kcal: 240, carbsG: 28, fibreG: 5, gi: 58,
+      minerals: ["iron", "potassium", "magnesium"],
+      raw: { kind: "raw", name: "Sliced onion with lemon", how: "Thinly slice one onion and squeeze a few drops of lemon juice over it with a pinch of chilli powder." },
+      sides: [
+        { kind: "cooked", name: "Drumstick sambar", how: "Simmer toor dal with drumsticks, tamarind and sambar powder until thick and fragrant." },
+        { kind: "cooked", name: "Cabbage poriyal", how: "Sauté shredded cabbage with mustard seeds, green chilli and grated coconut until tender." },
+      ],
+    },
+    "proso-millet-38": {
+      kcal: 230, carbsG: 32, fibreG: 6, gi: 55,
+      minerals: ["iron", "calcium", "magnesium"],
+      raw: { kind: "raw", name: "Cucumber and carrot sticks", how: "Cut cucumber and carrot into sticks and sprinkle with chaat masala." },
+      sides: [
+        { kind: "cooked", name: "Methi dal", how: "Simmer toor dal with tomato and turmeric, then finish with a tempering of mustard seeds and dried chilli." },
+        { kind: "cooked", name: "Bhindi sabzi", how: "Stir-fry sliced okra with onion, cumin and turmeric until tender and lightly browned." },
+      ],
+    },
+    "proso-millet-39": {
+      kcal: 260, carbsG: 28, fibreG: 4, gi: 60,
+      minerals: ["iron", "calcium", "folate"],
+      raw: { kind: "raw", name: "Sliced onion and cucumber", how: "Slice one onion and one cucumber into rounds and season with black salt and lemon juice." },
+      sides: [
+        { kind: "cooked", name: "Palak sabzi", how: "Cook spinach with onion, garlic and cumin until soft and mildly spiced." },
+        { kind: "cooked", name: "Aloo gobi", how: "Cook potato and cauliflower with cumin, turmeric and tomato until tender." },
+      ],
+    },
+    "proso-millet-40": {
+      kcal: 380, carbsG: 36, fibreG: 5, gi: 55,
+      minerals: ["iron", "zinc", "phosphorus"],
+      raw: { kind: "raw", name: "Cucumber and onion salad", how: "Slice cucumber and onion thinly and toss with lemon juice and a pinch of salt." },
+      sides: [
+        { kind: "cooked", name: "Beans poriyal", how: "Stir-fry chopped beans with grated coconut, mustard seeds and curry leaves until just tender." },
+        { kind: "cooked", name: "Tomato rasam", how: "Simmer tomato with tamarind water, pepper, cumin and garlic, then finish with coriander." },
+      ],
+    },
+  },
 };

@@ -972,3 +972,26 @@ button.button:disabled {
   font-size: 0.9rem;
   opacity: 0.9;
 }
+
+/* Per-100 g nutrition table on rice variety pages */
+.rice-nutrition {
+  width: 100%;
+  max-width: 36rem;
+  border-collapse: collapse;
+  margin: 1rem 0 0.5rem;
+}
+.rice-nutrition caption {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.rice-nutrition th,
+.rice-nutrition td {
+  text-align: left;
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid #e8dccb;
+}
+.rice-nutrition th {
+  font-weight: 500;
+  width: 45%;
+}

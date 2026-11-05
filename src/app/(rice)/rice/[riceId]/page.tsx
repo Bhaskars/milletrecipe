@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { RICE_VARIETIES } from "@/data/rice";
-import { getRiceById } from "@/lib/rice";
+import { getRiceById, riceLoad } from "@/lib/rice";
 
 type Params = { riceId: string };
 
@@ -66,6 +66,21 @@ export default async function RiceVarietyPage({ params }: { params: Promise<Para
       <section className="rice-section">
         <h2>Nutrition</h2>
         <p>{rice.nutritionNote}</p>
+        <table className="rice-nutrition">
+          <caption>Per 100 g cooked rice (estimates)</caption>
+          <tbody>
+            <tr><th scope="row">Energy</th><td>{rice.nutrition.kcal} kcal</td></tr>
+            <tr><th scope="row">Protein</th><td>{rice.nutrition.proteinG} g</td></tr>
+            <tr><th scope="row">Fat</th><td>{rice.nutrition.fatG} g</td></tr>
+            <tr><th scope="row">Carbohydrate</th><td>{rice.nutrition.carbsG} g</td></tr>
+            <tr><th scope="row">Fibre</th><td>{rice.nutrition.fibreG} g</td></tr>
+            <tr><th scope="row">Glycemic index</th><td>{rice.nutrition.gi}</td></tr>
+            <tr><th scope="row">Glycemic load</th><td>{riceLoad(rice).glycemicLoad}</td></tr>
+            <tr><th scope="row">Sugar equivalent</th><td>{riceLoad(rice).sugarTsp} tsp</td></tr>
+            <tr><th scope="row">Main minerals</th><td>{rice.nutrition.minerals.join(", ")}</td></tr>
+          </tbody>
+        </table>
+        <p className="rice-disclaimer">Values are typical estimates, not lab measurements. The glycemic index varies with cooking method and the rice variety.</p>
       </section>
 
       <section className="rice-section">

@@ -18,6 +18,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
     traditionalUses: ["Plain rice with sambar, rasam or kootu", "Curd rice", "Lemon and tamarind rice"],
     traditionalBenefits: ["Light on the stomach for everyday meals", "Mild taste that suits children and the elderly"],
     nutritionNote: "Polished white rice. Most of the bran is removed, so it is lower in fibre and minerals than brown rice.",
+    nutrition: { kcal: 130, proteinG: 2.7, fatG: 0.3, carbsG: 28.0, fibreG: 0.4, gi: 72, minerals: ["Manganese", "Magnesium"] },
     cookingNote: "Rinse until the water runs clear. Use 1 cup rice to 2 cups water and cook covered for about 15 minutes, then rest 5 minutes.",
   },
   {
@@ -31,6 +32,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
     traditionalUses: ["Plain rice with dal and vegetables", "Sambar rice and chitranna", "Pulao for everyday meals"],
     traditionalBenefits: ["Light texture that many households prefer for daily meals"],
     nutritionNote: "Polished white rice. Its carbohydrate content is similar to other white rice; it is not a source of fibre.",
+    nutrition: { kcal: 130, proteinG: 2.6, fatG: 0.3, carbsG: 28.0, fibreG: 0.4, gi: 70, minerals: ["Manganese"] },
     cookingNote: "Rinse well, then cook with about 2 1/2 cups water per cup of rice for 12-15 minutes. Fluff with a fork.",
   },
   {
@@ -44,6 +46,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
     traditionalUses: ["Idli batter", "Dosa and appam batter", "Uttapam"],
     traditionalBenefits: ["Fermented batters are traditionally believed to be easy to digest"],
     nutritionNote: "Polished rice. Fermentation of the batter makes it easier to digest and adds some B vitamins.",
+    nutrition: { kcal: 128, proteinG: 2.6, fatG: 0.3, carbsG: 28.0, fibreG: 0.5, gi: 68, minerals: ["Manganese", "Magnesium"] },
     cookingNote: "Soak 4 cups of rice with 1 cup of urad dal for 6 hours, grind fine, ferment overnight in a warm place.",
   },
   {
@@ -57,6 +60,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
     traditionalUses: ["Everyday lunch rice", "Sadya rice in Kerala", "Pulao and fried rice"],
     traditionalBenefits: ["Parboiling is traditionally believed to keep more of the grain's nutrients"],
     nutritionNote: "Parboiling moves some vitamins and minerals from the bran into the grain, so it is richer in these than regular white rice.",
+    nutrition: { kcal: 125, proteinG: 2.6, fatG: 0.3, carbsG: 27.0, fibreG: 0.6, gi: 60, minerals: ["Manganese", "Magnesium", "Iron"] },
     cookingNote: "Rinse once, then cook with 2 1/2 cups water per cup for about 20 minutes. It needs more time than white rice.",
   },
   {
@@ -70,6 +74,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
     traditionalUses: ["Biryani", "Pulao", "Plain rice with rich curries"],
     traditionalBenefits: ["Its low stickiness makes it a traditional choice for festive dishes"],
     nutritionNote: "Usually polished white rice. It has a moderate glycemic index compared with other white rice.",
+    nutrition: { kcal: 121, proteinG: 3.5, fatG: 0.4, carbsG: 25.0, fibreG: 0.4, gi: 58, minerals: ["Manganese", "Magnesium"] },
     cookingNote: "Soak for 20-30 minutes, then boil in plenty of salted water for about 8 minutes until just tender. Drain and steam.",
   },
   // Aromatic rice
@@ -84,6 +89,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
     traditionalUses: ["Seeraga samba biryani", "Ghee rice", "Vegetable pulao"],
     traditionalBenefits: ["Traditionally believed to be light on digestion", "Often used in special meals for its aroma"],
     nutritionNote: "Polished rice with a small grain. Nutrition is similar to other white rice.",
+    nutrition: { kcal: 128, proteinG: 2.6, fatG: 0.3, carbsG: 28.0, fibreG: 0.4, gi: 65, minerals: ["Manganese"] },
     cookingNote: "Soak for 30 minutes, then cook with 1 1/2 cups water per cup of rice. It needs little water and cooks quickly.",
   },
   {
@@ -97,6 +103,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
     traditionalUses: ["Pongal", "Cooling rice kanji in summer", "Sweet pongal"],
     traditionalBenefits: ["Traditionally favoured for cooling kanji in the summer heat"],
     nutritionNote: "Usually polished rice. Like other white rice, it is mainly a source of carbohydrate.",
+    nutrition: { kcal: 128, proteinG: 2.6, fatG: 0.3, carbsG: 28.0, fibreG: 0.5, gi: 66, minerals: ["Manganese"] },
     cookingNote: "Rinse and soak for 20 minutes. Cook in 3 cups water per cup of rice for pongal, or 2 cups for plain rice.",
   },
   {
@@ -110,6 +117,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
     traditionalUses: ["Plain rice with ghee", "Lemon rice", "Light vegetable pulao"],
     traditionalBenefits: ["Its aroma makes it a traditional choice for special lunches"],
     nutritionNote: "Polished white rice. It is a source of carbohydrate and little else.",
+    nutrition: { kcal: 125, proteinG: 2.5, fatG: 0.3, carbsG: 27.0, fibreG: 0.4, gi: 70, minerals: ["Manganese"] },
     cookingNote: "Rinse, soak 15 minutes, then cook with 2 cups water per cup of rice until the grains are just tender.",
   },
   {
@@ -123,6 +131,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
     traditionalUses: ["Payesh (rice pudding)", "Bengali khichdi", "Temple offerings"],
     traditionalBenefits: ["Traditionally offered as bhog in Bengali temples and homes"],
     nutritionNote: "Usually polished rice. Its starch makes it creamy in sweet dishes.",
+    nutrition: { kcal: 130, proteinG: 2.6, fatG: 0.3, carbsG: 28.0, fibreG: 0.4, gi: 72, minerals: ["Manganese"] },
     cookingNote: "Wash and soak for 20 minutes. For payesh, cook in milk on low heat, stirring often, until creamy.",
   },
   {
@@ -136,6 +145,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
     traditionalUses: ["Festive pulao", "Plain rice with dal", "Kheer"],
     traditionalBenefits: ["Traditionally valued for its strong, distinctive aroma"],
     nutritionNote: "Aromatic rice with the carbohydrate profile of other fine-grain rice.",
+    nutrition: { kcal: 125, proteinG: 2.7, fatG: 0.3, carbsG: 27.0, fibreG: 0.5, gi: 62, minerals: ["Manganese", "Magnesium"] },
     cookingNote: "Soak for 30 minutes. Cook with 2 cups water per cup of rice, or follow a pulao method with a little ghee.",
   },
   // Traditional heritage rice
@@ -153,6 +163,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
       "Traditionally valued as a filling, energy-giving rice",
     ],
     nutritionNote: "Its reddish bran layer keeps some fibre and minerals, and the colour comes from antioxidant pigments.",
+    nutrition: { kcal: 120, proteinG: 2.8, fatG: 0.5, carbsG: 26.0, fibreG: 1.3, gi: 60, minerals: ["Iron", "Magnesium", "Manganese"] },
     cookingNote: "Soak for 30 minutes. Cook with 2 1/2 cups water per cup of rice for 20 minutes, then rest.",
   },
   {
@@ -169,6 +180,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
       "Commonly believed to help with steady energy; a traditional choice for people watching their sugar, though this should be checked with a doctor",
     ],
     nutritionNote: "The dark colour comes from anthocyanins, antioxidant pigments. The bran also gives more fibre and iron than white rice.",
+    nutrition: { kcal: 120, proteinG: 2.9, fatG: 0.7, carbsG: 24.5, fibreG: 2.0, gi: 50, minerals: ["Iron", "Magnesium", "Zinc"] },
     cookingNote: "Soak overnight. Cook with 2 1/2 cups water per cup of rice for 35-40 minutes until soft. It stays chewy.",
   },
   {
@@ -185,6 +197,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
       "Traditionally believed to nourish the body after illness; ask an Ayurvedic practitioner before using it for treatment",
     ],
     nutritionNote: "The thick bran retains fibre and minerals. Its use in Ayurveda is traditional, and there is limited modern research.",
+    nutrition: { kcal: 115, proteinG: 2.9, fatG: 0.6, carbsG: 24.0, fibreG: 2.2, gi: 55, minerals: ["Iron", "Magnesium", "Manganese"] },
     cookingNote: "Soak overnight. Boil in 6 cups water per cup of rice for 40 minutes, or until it becomes a soft kanji.",
   },
   {
@@ -198,6 +211,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
     traditionalUses: ["Onam sadya rice", "Kanji and payasam", "Lunch rice with fish curry or thoran"],
     traditionalBenefits: ["Its red bran is traditionally believed to keep the body strong and steady"],
     nutritionNote: "The red bran keeps fibre, minerals and antioxidant pigments that white rice loses in milling.",
+    nutrition: { kcal: 120, proteinG: 2.8, fatG: 0.6, carbsG: 25.0, fibreG: 1.5, gi: 60, minerals: ["Iron", "Magnesium", "Manganese"] },
     cookingNote: "Soak for 1 hour. Cook with 3 cups water per cup of rice for 30-35 minutes until tender.",
   },
   {
@@ -211,6 +225,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
     traditionalUses: ["Puttu", "Red rice kanji", "Rice with coastal fish curries"],
     traditionalBenefits: ["Traditionally grown in saline coastal fields, a farming practice preserved by local communities"],
     nutritionNote: "Red bran rice, which keeps fibre, iron and antioxidant pigments.",
+    nutrition: { kcal: 120, proteinG: 2.8, fatG: 0.7, carbsG: 25.0, fibreG: 1.6, gi: 58, minerals: ["Iron", "Magnesium", "Manganese"] },
     cookingNote: "Soak for 1 hour. Cook with 3 cups water per cup of rice for about 30 minutes, until soft.",
   },
   // Whole grain rice
@@ -225,6 +240,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
     traditionalUses: ["Replacement for white rice in everyday meals", "Brown rice khichdi", "Rice bowls with vegetables"],
     traditionalBenefits: ["Traditionally eaten as a whole-grain alternative to polished rice"],
     nutritionNote: "Keeps the bran, so it has more fibre, magnesium and manganese than white rice.",
+    nutrition: { kcal: 111, proteinG: 2.6, fatG: 0.9, carbsG: 23.0, fibreG: 1.8, gi: 55, minerals: ["Magnesium", "Manganese", "Phosphorus"] },
     cookingNote: "Soak for 30 minutes. Cook with 2 1/2 cups water per cup of rice for 40-45 minutes, then rest 10 minutes.",
   },
   {
@@ -238,6 +254,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
     traditionalUses: ["Porridge", "Rice salads", "Steamed red rice with vegetables"],
     traditionalBenefits: ["Red bran is traditionally eaten for its fibre and colour"],
     nutritionNote: "Red bran keeps fibre, minerals and antioxidant pigments.",
+    nutrition: { kcal: 118, proteinG: 2.7, fatG: 0.8, carbsG: 24.5, fibreG: 1.8, gi: 55, minerals: ["Iron", "Magnesium", "Manganese"] },
     cookingNote: "Soak for 1 hour. Cook with 3 cups water per cup for about 35 minutes until tender.",
   },
   {
@@ -254,6 +271,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
       "Commonly believed to be rich in antioxidants",
     ],
     nutritionNote: "The dark bran is rich in anthocyanin pigments and keeps more fibre and iron than white rice.",
+    nutrition: { kcal: 120, proteinG: 2.8, fatG: 0.7, carbsG: 24.5, fibreG: 2.1, gi: 50, minerals: ["Iron", "Magnesium", "Zinc"] },
     cookingNote: "Soak for 2 hours. Cook with 2 1/2 cups water per cup for about 35 minutes, until soft.",
   },
   {
@@ -267,6 +285,7 @@ export const RICE_VARIETIES: RiceVariety[] = [
     traditionalUses: ["Sweet rice dishes", "Steamed sticky rice", "Rice cakes"],
     traditionalBenefits: ["Traditionally used in festive sweets and rice cakes"],
     nutritionNote: "Contains a high share of starch, so it is best eaten in small portions.",
+    nutrition: { kcal: 110, proteinG: 2.4, fatG: 0.2, carbsG: 25.0, fibreG: 0.9, gi: 87, minerals: ["Manganese", "Magnesium"] },
     cookingNote: "Soak for 4 hours or overnight. Steam for 20-25 minutes, rather than boiling, so the grains stay separate.",
   },
 ];

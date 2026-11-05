@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { RICE_VARIETIES } from "@/data/rice";
 import { RICE_GROUPS } from "@/types/rice";
-import { getRiceById, riceMenu } from "@/lib/rice";
+import { getRiceById, riceLoad, riceMenu } from "@/lib/rice";
 
 describe("rice catalogue", () => {
   it("includes the named heritage varieties", () => {
@@ -39,6 +39,24 @@ describe("rice catalogue", () => {
       for (const benefit of rice.traditionalBenefits) {
         expect(banned.test(benefit), `${rice.id}: ${benefit}`).toBe(false);
       }
+    }
+  });
+
+  it("gives every variety plausible per-100 g nutrition and a derived glycemic load", () => {
+    for (const rice of RICE_VARIETIES) {
+      const n = rice.nutrition;
+      expect(n.kcal, rice.id).toBeGreaterThanOrEqual(80);
+      expect(n.kcal, rice.id).toBeLessThanOrEqual(180);
+      expect(n.carbsG, rice.id).toBeGreaterThan(15);
+      expect(n.carbsG, rice.id).toBeLessThan(35);
+      expect(n.fibreG, rice.id).toBeGreaterThan(0);
+      expect(n.fibreG, rice.id).toBeLessThan(10);
+      expect(n.gi, rice.id).toBeGreaterThanOrEqual(30);
+      expect(n.gi, rice.id).toBeLessThanOrEqual(100);
+      expect(n.minerals.length, rice.id).toBeGreaterThan(0);
+      const load = riceLoad(rice);
+      expect(load.glycemicLoad, rice.id).toBeCloseTo((n.gi * n.carbsG) / 100, 0);
+      expect(load.sugarTsp, rice.id).toBeCloseTo(load.glycemicLoad / 4, 0);
     }
   });
 });

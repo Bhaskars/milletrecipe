@@ -12,7 +12,7 @@ export const PEARL_MILLET_BATCH_5: {
   recipes: [
     {
       id: "pearl-millet-36",
-      title: "Bajra Thalipeeth",
+      title: "Bajra Onion Thalipeeth",
       milletId: "pearl-millet",
       region: "West Indian",
       diet: "Vegetarian",
